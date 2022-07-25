@@ -1,0 +1,14 @@
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        dict_nums = {}
+
+
+        for x, number in enumerate(sorted(nums)):
+            if number not in dict_nums:
+                dict_nums[number] = x
+
+        numbers_less_than = []
+        for x, number in enumerate(nums):
+            numbers_less_than.append(dict_nums[number])
+
+        return numbers_less_than
